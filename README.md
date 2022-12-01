@@ -1,7 +1,7 @@
-# Project 2
-In this project I'm using the red light violations data from the Chicago portal to visualize the data in a visual and interactive way. I've used JavaScript, D3, and Observable to import, transform, visualize and interactively analyze this dataset.
+# Project 3
+In this project I'm using the red light violations data from the Chicago portal to visualize the data in a visual and interactive way. I've used JavaScript, D3, and Observable to import, transform, visualize and interactively analyze this dataset. Then I built a complete web-based visualization system leveraging outcomes from the previous projects. I used React.js and D3 to visualize and interactively analyze a dataset. The visualization is hosted on a publicly available website.
 
-Observable link: https://observablehq.com/@hsheik8/project-2
+link: [https://redlightviolations.herokuapp.com/]
 
 # About the Dataset
 The red light violations dataset reflects the daily volume of violations created by the City of Chicago Red Light Program for each camera in the city of Chicago. The reported violations are those that have been collected by the camera system and reviewed by two separate city contractors. In some instances, due to the inability of the registered owner of the offending vehicle, the violation may not be issued as a citation. However, this dataset contains all violations regardless of whether a citation was actually issued.
