@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Project 2
+In this project I'm using the red light violations data from the Chicago portal to visualize the data in a visual and interactive way. I've used JavaScript, D3, and Observable to import, transform, visualize and interactively analyze this dataset.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Observable link: https://observablehq.com/@hsheik8/project-2
 
-## Available Scripts
+# About the Dataset
+The red light violations dataset reflects the daily volume of violations created by the City of Chicago Red Light Program for each camera in the city of Chicago. The reported violations are those that have been collected by the camera system and reviewed by two separate city contractors. In some instances, due to the inability of the registered owner of the offending vehicle, the violation may not be issued as a citation. However, this dataset contains all violations regardless of whether a citation was actually issued.
 
-In the project directory, you can run:
+For this project, I decided to just go with one month's (July 2022) data. Also, red color was chosen for the charts and map because it goes with the theme of red light violations.
 
-### `npm start`
+# Columns in the dataset
+- Intersection
+- Camera ID
+- Address
+- Violation Date
+- Violations
+- Longitude
+- Latitude
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![unnamed](https://user-images.githubusercontent.com/89727658/200224654-6018cb2e-bd14-4399-a052-f0c43626ac82.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Data Questions
+- How many violations for every intersection?
+- How many violations for each day?
+- For a given date, where do the most violations occur?
+- For a given date, where do the most violations occur and how many of them occur for a given location?
 
-### `npm test`
+# Intersections vs. Violations
+To answer this first question, I first plotted the violations vs intersections to see which interscetions have the most violations. However, one of the problems was that it was hard to estimate which one had the highest. Because it looked like this:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![unnamed](https://user-images.githubusercontent.com/89727658/200224731-a7dc23b4-ce5d-4bf4-aa1d-a0cabe5bf465.png)
 
-### `npm run build`
+So I decided to sort in an ascending order by the number of violations and found out that Lakeshore and Belmont was the intersection with the most red light violations. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![unnamed](https://user-images.githubusercontent.com/89727658/200224838-44ae65da-d83d-4f3c-a919-06d96ae4d541.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+There was still one more problem which was that since the intersection names were very big and it was not possible to abbreviate them, so I decided to rotate them and made the chart zoomable. This way it was easier to see the intersection name and the exact number of violations for that intersection.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+(Can't upload a video. See slides or observable to check it out!)
 
-### `npm run eject`
+# Date vs. Violations
+This one was more straightforward. After plotting the chart in an ascending order by the number of violations, it was clear that there was no special trend and relationship between these two attributes.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![unnamed](https://user-images.githubusercontent.com/89727658/200224963-dee028d4-9af7-45f5-be67-e7ff2ee3c1fd.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Date, Violations, Lon & Lat
+Now, since there weren't that many attributes in my dataset and the only main one left was the longitude and latitude. I decided to use these two attributes and plot them on a map of chicago. In this first interactive visualization the user can chose a specific date from the slider and the map will update the points representing the locations where the violation occured. This combines both the aspect of date and intersections by giving the user the choice to chose the date and then visually representing the locations of violations on a map. This map is also a good way to see the concentrations of red light violations in the city of Chicago.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+(Can't upload a video. See slides or observable to check it out!)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Date, Violations, Intersection, Longitude & Latitude
+Now, there was still a problem with the previous interactive visualization which was that when the user chose a date, it would plot the points of violations but there was no way of knowing which point represented which intersection and how many violations occured was also not being shown. This is why I added an onClick for the points on the map and linked that onClick with the barChart function. Now anytime a user clicks on a particular point, that intersection would be added to the barChart of selected intersections and the number of violations for all the selected intersections is then displayed in a linked bar chart. 
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+(Can't upload a video. See slides or observable to check it out!)
