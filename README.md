@@ -36,7 +36,7 @@ So I decided to sort in an ascending order by the number of violations and found
 
 There was still one more problem which was that since the intersection names were very big and it was not possible to abbreviate them, so I decided to rotate them and made the chart zoomable. This way it was easier to see the intersection name and the exact number of violations for that intersection.
 
-(Can't upload a video. See slides or observable to check it out!)
+(Can't upload a video. See the website to check it out!)
 
 # Date vs. Violations
 This one was more straightforward. After plotting the chart in an ascending order by the number of violations, it was clear that there was no special trend and relationship between these two attributes.
@@ -46,9 +46,14 @@ This one was more straightforward. After plotting the chart in an ascending orde
 # Date, Violations, Lon & Lat
 Now, since there weren't that many attributes in my dataset and the only main one left was the longitude and latitude. I decided to use these two attributes and plot them on a map of chicago. In this first interactive visualization the user can chose a specific date from the slider and the map will update the points representing the locations where the violation occured. This combines both the aspect of date and intersections by giving the user the choice to chose the date and then visually representing the locations of violations on a map. This map is also a good way to see the concentrations of red light violations in the city of Chicago.
 
-(Can't upload a video. See slides or observable to check it out!)
+(Can't upload a video. See the website to check it out!)
 
 # Date, Violations, Intersection, Longitude & Latitude
 Now, there was still a problem with the previous interactive visualization which was that when the user chose a date, it would plot the points of violations but there was no way of knowing which point represented which intersection and how many violations occured was also not being shown. This is why I added an onClick for the points on the map and linked that onClick with the barChart function. Now anytime a user clicks on a particular point, that intersection would be added to the barChart of selected intersections and the number of violations for all the selected intersections is then displayed in a linked bar chart. 
 
-(Can't upload a video. See slides or observable to check it out!)
+(Can't upload a video. See the website to check it out!)
+
+# New Interactive Visualization
+The new interactive visualization builds on the previous visualization. I noticed that once the point was clicked and the bar chart appeared / was updated, it was hard to read specific intersection's violations. So I made it such that when the user hovers over a specific rectangle, the violation number appears at the top right of the chart.
+
+(Can't upload a video. See the website to check it out!)
