@@ -1,5 +1,5 @@
 # Project 3
-In this project I'm using the red light violations data from the Chicago portal to visualize the data in a visual and interactive way. I've used JavaScript, D3, and Observable to import, transform, visualize and interactively analyze this dataset. Then I built a complete web-based visualization system leveraging outcomes from the previous projects. I used React.js and D3 to visualize and interactively analyze a dataset. The visualization is hosted on a publicly available website.
+In this project I'm using the red light violations data from the Chicago portal to visualize the data in a visual and interactive way. I've built a complete web-based visualization system leveraging outcomes from the previous projects. I used React.js and D3 to visualize and interactively analyze a dataset. The visualization is hosted on a publicly available website.
 
 link: [https://redlightviolations.herokuapp.com/]
 
